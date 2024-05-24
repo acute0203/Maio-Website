@@ -1,0 +1,10 @@
+jest.config.cjs
+node_modules
+assets
+public
+dist
+static
+locales
+migration
+*.d.ts
+.eslintrc.js
