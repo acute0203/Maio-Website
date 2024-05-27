@@ -8,6 +8,12 @@
   --info: #e4e4e4;
 }
 
+#tsparticles-banner {
+  width: 100%;
+  height: 240px;
+  z-index: -1;
+}
+
 html {
   @apply h-full w-full text-[75%] xl:text-[100%];
 }
@@ -96,7 +102,7 @@ body {
   opacity: 1;
 }
 
-.text-stroke-primary {
+.text-stroke-info {
   text-shadow:
     1px 1px 0 var(--info),
     -1px -1px 0 var(--info),
@@ -104,7 +110,7 @@ body {
     -1px 1px 0 var(--info);
 }
 
-.text-stroke-secondary {
+.text-stroke-primary {
   text-shadow:
     1px 1px 0 var(--primary),
     -1px -1px 0 var(--primary),
@@ -114,7 +120,7 @@ body {
 
 .swiper-pagination {
   display: flex;
-  height: 62%;
+  height: 72%;
   padding-right: 70px;
   flex-direction: column;
   align-items: end;
@@ -197,8 +203,32 @@ body {
   -webkit-text-stroke: 1px var(--secondary);
 }
 
+.contact-title {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(270deg, var(--primary), var(--secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px var(--primary);
+  &::after {
+    content: "";
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 4px;
+    background-color: var(--secondary);
+  }
+}
+
 .shadow-card {
   box-shadow: 0px 0px 8px 0px rgba(70, 242, 152, 0.5);
+}
+
+.shadow-section {
+  box-shadow: 0px 0px 10px 0px rgba(70, 242, 152, 0.3);
 }
 
 .shadow-icon {
@@ -269,5 +299,42 @@ body {
     background-image: linear-gradient(to left, #002659 0%, #46f298 100%);
     background-position: right center;
     text-decoration: none;
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title-border-left {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -24px;
+    width: 4px;
+    height: 90%;
+    border-radius: 8px;
+    background: var(--secondary);
+  }
+}
+
+.title-border-right {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -24px;
+    width: 4px;
+    height: 90%;
+    border-radius: 8px;
+    background: var(--secondary);
   }
 }

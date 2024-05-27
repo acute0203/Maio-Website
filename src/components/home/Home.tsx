@@ -3,7 +3,7 @@ import { Services } from "./Services"
 import { About } from "./About"
 import { Hero } from "./Hero"
 import { Partners } from "./Partners"
-import { Contact } from "./Contact"
+import { HomeContact } from "./HomeContact"
 
 export const Home: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ export const Home: React.FC = () => {
       <Services />
       <About />
       <Partners />
-      <Contact />
+      <HomeContact />
     </>
   )
 }

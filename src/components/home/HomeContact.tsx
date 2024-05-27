@@ -4,7 +4,7 @@ import { CommonSection } from "@/components/common/CommonSection"
 import EmailIcon from "@mui/icons-material/Email"
 import { LineIcon } from "@/components/common/CommonIcon"
 
-export const Contact: React.FC = () => {
+export const HomeContact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",

@@ -14,6 +14,25 @@ const HomePage = React.lazy(() =>
     default: HomePage,
   })),
 )
+
+const ProductsPage = React.lazy(() =>
+  import("../pages/products").then(({ ProductsPage }) => ({
+    default: ProductsPage,
+  })),
+)
+
+const HirePage = React.lazy(() =>
+  import("../pages/hire").then(({ HirePage }) => ({
+    default: HirePage,
+  })),
+)
+
+const ContactPage = React.lazy(() =>
+  import("../pages/contact").then(({ ContactPage }) => ({
+    default: ContactPage,
+  })),
+)
+
 export const RouterMap = (): ReactElement | null =>
   useRoutes([
     {
@@ -28,6 +47,30 @@ export const RouterMap = (): ReactElement | null =>
           element: (
             <Suspense>
               <HomePage />
+            </Suspense>
+          ),
+        },
+        {
+          path: "/products",
+          element: (
+            <Suspense>
+              <ProductsPage />
+            </Suspense>
+          ),
+        },
+        {
+          path: "/hire",
+          element: (
+            <Suspense>
+              <HirePage />
+            </Suspense>
+          ),
+        },
+        {
+          path: "/contact",
+          element: (
+            <Suspense>
+              <ContactPage />
             </Suspense>
           ),
         },

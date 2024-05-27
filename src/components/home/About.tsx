@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Box } from "@mui/material"
 import { CommonSection } from "@/components/common/CommonSection"
 import { AboutEnum } from "@/core/enum/AboutEnum"
+import { aboutMenus } from "@/core/constant/menu"
 
 export const About: React.FC = () => {
   const [title, setTitle] = useState(AboutEnum.INTRODUCTION)
@@ -43,24 +44,15 @@ export const About: React.FC = () => {
         }}
       >
         <div className="flex h-full w-full flex-col items-end justify-center gap-3 pb-32 text-center text-2xl font-bold leading-9 text-primary">
-          <div
-            className={`about-title w-2/3 bg-secondary py-4 pr-8 ${AboutEnum.INTRODUCTION === title ? "opacity-100" : "opacity-50"}`}
-            onClick={() => setTitle(AboutEnum.INTRODUCTION)}
-          >
-            公司簡介
-          </div>
-          <div
-            className={`about-title w-2/3 -translate-x-[42px] bg-secondary py-4 pr-8 ${AboutEnum.VISION === title ? "opacity-100" : "opacity-50"}`}
-            onClick={() => setTitle(AboutEnum.VISION)}
-          >
-            企業願景
-          </div>
-          <div
-            className={`about-title b w-2/3 -translate-x-[84px] bg-secondary py-4 pr-8 ${AboutEnum.VALUE === title ? "opacity-100" : "opacity-50"}`}
-            onClick={() => setTitle(AboutEnum.VALUE)}
-          >
-            核心價值
-          </div>
+          {aboutMenus.map(menu => (
+            <div
+              key={menu.key}
+              className={`about-title w-2/3 bg-secondary py-4 pr-8 ${menu.key === title ? "opacity-100" : "opacity-50"} ${menu.className}`}
+              onClick={() => setTitle(menu.key)}
+            >
+              {menu.label}
+            </div>
+          ))}
         </div>
       </Box>
       <div className="mx-auto w-11/12 justify-center text-center lg:w-4/5 xl:w-[1096px]">

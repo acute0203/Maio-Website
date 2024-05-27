@@ -101,18 +101,7 @@ export const Hero: React.FC = () => {
         overflow: "hidden",
       }}
     >
-      {init && (
-        <Particles
-          id="tsparticles"
-          options={options}
-          style={{
-            position: "absolute",
-            width: "100%",
-            height: "100%",
-            zIndex: -10,
-          }}
-        />
-      )}
+      {init && <Particles id="tsparticles" options={options} />}
       <Box className="absolute -right-20 bottom-[200px] rotate-90 transform text-sm tracking-widest text-secondary">
         Chain the Future, One Mile, One Footprint,
         <br />
@@ -165,10 +154,10 @@ export const Hero: React.FC = () => {
                   {menu.description}
                 </p>
                 <div className="absolute bottom-9 right-0 z-10 font-roboto text-6xl font-black italic">
-                  <p className="text-stroke-primary -mb-[14px] text-primary">
+                  <p className="text-stroke-info -mb-[14px] text-primary">
                     {menu.title}
                   </p>
-                  <p className="text-stroke-secondary text-secondary">
+                  <p className="text-stroke-primary text-secondary">
                     {menu.subTitle}
                   </p>
                 </div>

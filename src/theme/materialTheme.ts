@@ -9,6 +9,9 @@ export const materialTheme = createTheme({
     secondary: {
       main: "#46F298",
     },
+    info: {
+      main: "#E4E4E4",
+    },
     contrastThreshold: 3,
     tonalOffset: 0.2,
   },

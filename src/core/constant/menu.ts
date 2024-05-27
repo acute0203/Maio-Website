@@ -1,3 +1,5 @@
+import { AboutEnum } from "@/core/enum/AboutEnum"
+
 export type CardData = {
   title: string
   description: string
@@ -78,5 +80,23 @@ export const serviceMenus: CardData[] = [
     description:
       "麥點提供金融科技和去中心化金融解決方案，幫助客戶實現金融創新和業務升級，深耕數位金融領域。",
     icon: "/images/service-06.png",
+  },
+]
+
+export const aboutMenus = [
+  {
+    key: AboutEnum.INTRODUCTION,
+    label: "公司簡介",
+    className: "",
+  },
+  {
+    key: AboutEnum.VISION,
+    label: "企業願景",
+    className: "-translate-x-[42px]",
+  },
+  {
+    key: AboutEnum.VALUE,
+    label: "核心價值",
+    className: "-translate-x-[84px]",
   },
 ]
