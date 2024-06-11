@@ -15,9 +15,9 @@ const HomePage = React.lazy(() =>
   })),
 )
 
-const ProductsPage = React.lazy(() =>
-  import("../pages/products").then(({ ProductsPage }) => ({
-    default: ProductsPage,
+const ServicePage = React.lazy(() =>
+  import("../pages/service").then(({ ServicePage }) => ({
+    default: ServicePage,
   })),
 )
 
@@ -30,6 +30,12 @@ const HirePage = React.lazy(() =>
 const ContactPage = React.lazy(() =>
   import("../pages/contact").then(({ ContactPage }) => ({
     default: ContactPage,
+  })),
+)
+
+const ProductsPage = React.lazy(() =>
+  import("../pages/products").then(({ ProductsPage }) => ({
+    default: ProductsPage,
   })),
 )
 
@@ -47,6 +53,14 @@ export const RouterMap = (): ReactElement | null =>
           element: (
             <Suspense>
               <HomePage />
+            </Suspense>
+          ),
+        },
+        {
+          path: "/service",
+          element: (
+            <Suspense>
+              <ServicePage />
             </Suspense>
           ),
         },

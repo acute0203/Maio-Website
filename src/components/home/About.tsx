@@ -1,11 +1,15 @@
 import React, { useState } from "react"
-import { Box } from "@mui/material"
+import { Box, useTheme, useMediaQuery } from "@mui/material"
 import { CommonSection } from "@/components/common/CommonSection"
 import { AboutEnum } from "@/core/enum/AboutEnum"
 import { aboutMenus } from "@/core/constant/menu"
+import { cn } from "@/core/utils/cn"
+import { motion } from "framer-motion"
 
 export const About: React.FC = () => {
   const [title, setTitle] = useState(AboutEnum.INTRODUCTION)
+  const { breakpoints } = useTheme()
+  const isMobile = useMediaQuery(breakpoints.down("sm"))
 
   const renderSubTitle = () => {
     switch (title) {
@@ -41,13 +45,20 @@ export const About: React.FC = () => {
           backgroundColor: "#002659",
           clipPath: "polygon(0% 0%, 100% 0%, 50% 100%, 0% 100%)",
           zIndex: 1,
+          [breakpoints.down("sm")]: {
+            display: "none",
+          },
         }}
       >
         <div className="flex h-full w-full flex-col items-end justify-center gap-3 pb-32 text-center text-2xl font-bold leading-9 text-primary">
           {aboutMenus.map(menu => (
             <div
               key={menu.key}
-              className={`about-title w-2/3 bg-secondary py-4 pr-8 ${menu.key === title ? "opacity-100" : "opacity-50"} ${menu.className}`}
+              className={cn(
+                "about-title w-2/3 bg-secondary py-4 pr-8",
+                menu.key === title ? "opacity-100" : "opacity-50",
+                menu.className,
+              )}
               onClick={() => setTitle(menu.key)}
             >
               {menu.label}
@@ -55,18 +66,41 @@ export const About: React.FC = () => {
           ))}
         </div>
       </Box>
-      <div className="mx-auto w-11/12 justify-center text-center lg:w-4/5 xl:w-[1096px]">
+      <div className="mx-auto w-5/6 justify-center text-center lg:w-4/5 xl:w-[1096px]">
         <div className="title" data-title="關於麥點">
           About Us
         </div>
-        <div className="mb-24 ml-auto mt-[70px] w-2/3 text-start">
-          <div className="mb-3 text-2xl font-bold leading-9 tracking-wide text-primary">
+        {isMobile && (
+          <div className="flex w-full items-center justify-center py-8 font-bold text-primary">
+            {aboutMenus.map(menu => (
+              <div
+                key={menu.key}
+                className={cn(
+                  "about-title-mobile text-nowrap bg-secondary px-10 py-3",
+                  menu.key === title ? "opacity-100" : "opacity-50",
+                )}
+                onClick={() => setTitle(menu.key)}
+              >
+                {menu.label}
+              </div>
+            ))}
+          </div>
+        )}
+        <motion.div
+          className="text-start md:mb-24 md:ml-auto md:mt-[70px] md:w-2/3"
+          key={title}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="mb-3 text-center text-2xl font-bold leading-9 tracking-wide text-primary md:text-start">
             {renderSubTitle()}
           </div>
-          <p className="min-h-[140px] text-lg font-medium tracking-widest text-[#262626]">
+          <p className="min-h-[140px] text-lg font-medium tracking-widest text-dark">
             {renderDescription()}
           </p>
-        </div>
+        </motion.div>
       </div>
       <p className="section-title left-8 text-end">About Us</p>
     </CommonSection>

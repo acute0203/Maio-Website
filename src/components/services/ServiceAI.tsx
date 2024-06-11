@@ -1,11 +1,14 @@
 import React from "react"
 import { Box, useTheme } from "@mui/material"
+import { useNavigate } from "react-router-dom"
 
-export const ProductAI: React.FC = () => {
-  const { palette } = useTheme()
+export const ServiceAI: React.FC = () => {
+  const { palette, breakpoints } = useTheme()
+  const navigate = useNavigate()
 
   return (
     <Box
+      id="AI"
       sx={{
         position: "relative",
         bgcolor: palette.primary.main,
@@ -13,30 +16,33 @@ export const ProductAI: React.FC = () => {
         width: "100%",
         height: "100%",
         paddingY: 20,
+        [breakpoints.down("sm")]: {
+          paddingY: 8,
+        },
       }}
     >
-      <div className="mx-auto w-11/12 justify-center lg:w-4/5 xl:w-[1096px]">
-        <div className="shadow-section rounded-xl bg-info bg-gradient-to-r from-secondary to-[#00F0FF] p-px">
-          <div className="h-full w-full rounded-[calc(0.75rem-1px)] bg-info px-24 py-8">
-            <div className="flex flex-row-reverse items-center p-5">
+      <div className="mx-auto w-5/6 justify-center lg:w-4/5 xl:w-[1096px]">
+        <div className="shadow-section rounded-xl bg-info bg-gradient-to-r from-secondary to-primary-light p-px">
+          <div className="h-full w-full rounded-[calc(0.75rem-1px)] bg-info p-5 sm:px-24 sm:py-8">
+            <div className="flex flex-col items-center px-5 py-4 sm:flex-row-reverse sm:p-5">
               <img
                 src="/images/service-04.png"
                 alt="service"
-                className="service-icon px-3"
+                className="service-icon px-3 py-10 sm:py-0"
               />
-              <div className="title-border-right mr-11 font-roboto">
+              <div className="title-border-right font-roboto sm:mr-11">
                 <p className="text-gradient inline-block font-black italic">
                   Artificial Intelligence and Big Data
                 </p>
                 <p className="text-stroke-info my-3 text-4xl font-black text-primary">
                   人工智慧與大數據
                 </p>
-                <p className="text-lg leading-9 tracking-wide text-[#262626]">
+                <p className="text-lg leading-9 tracking-wide text-dark">
                   我們整合人工智慧和大數據技術，以提高業務效率和決策準確性，為企業帶來更多價值。以下是我們的服務項目：
                 </p>
               </div>
             </div>
-            <ul className="leading-9 tracking-wide text-[#5A5A5A]">
+            <ul className="px-5 leading-9 tracking-wide text-[#5A5A5A] sm:px-0">
               <li>
                 <span className="font-bold text-primary">•預測分析：</span>
                 利用大數據和機器學習，預測未來趨勢與行為，幫助企業做出更準確的決策。
@@ -63,7 +69,12 @@ export const ProductAI: React.FC = () => {
               </li>
             </ul>
             <div className="mt-5 text-center">
-              <button className="btn-gradient text-center">產品介紹</button>
+              <button
+                className="btn-gradient text-center"
+                onClick={() => navigate("/products")}
+              >
+                產品介紹
+              </button>
             </div>
           </div>
         </div>

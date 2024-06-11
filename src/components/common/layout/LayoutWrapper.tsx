@@ -6,9 +6,9 @@ import { Footer } from "@/components/common/Footer"
 
 export const LayoutWrapper: React.FC = () => {
   return (
-    <Box className="h-available">
+    <Box>
       <Header />
-      <Box sx={{ minHeight: "calc(100% - 73px)" }}>
+      <Box sx={{ minHeight: "calc(100% - 85px)" }}>
         <Outlet />
       </Box>
       <Footer />

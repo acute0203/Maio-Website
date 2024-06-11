@@ -8,7 +8,7 @@ export const CommonMenu = styled((props: MenuProps) => <Menu {...props} />)(
     "& .MuiPaper-root": {
       borderRadius: 8,
       minWidth: 186,
-      height: 128,
+      minHeight: 88,
       padding: 0,
       background: "#002659",
       color: "#ffffff",

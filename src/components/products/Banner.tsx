@@ -95,20 +95,11 @@ export const Banner: React.FC = () => {
       }}
     >
       {init && <Particles id="tsparticles-banner" options={options} />}
-      <div className="relative bg-primary py-40">
-        <p className="absolute -top-16 right-16 text-end font-roboto text-7xl font-black italic text-secondary">
-          PRODUCTS <br />
-          AND SERVICES
+      <div className="relative bg-primary pb-24">
+        <p className="absolute -top-11 right-8 text-end font-roboto text-5xl font-black italic text-secondary sm:-top-16 sm:right-16 sm:text-7xl">
+          DEVELOPMENT
+          <br /> AND INTEGRATION
         </p>
-        <div className="mx-auto w-5/6 justify-center lg:w-4/5 xl:w-[806px]">
-          <p className="text-lg leading-8 tracking-wide">
-            麥點科技提供多元化的軟體與技術解決方案，從軟體系統開發、區塊鏈應用開發到雲端服務管理，皆涵蓋其中。
-            <br />
-            我們擁有豐富的人工智慧與大數據整合經驗，協助客戶挖掘數據價值，提高業務效率。
-            <br />
-            同時，我們致力於數位轉型與創新，助您擁抱數位時代，以及提供金融科技與去中心化金融解決方案，幫助客戶實現金融創新與業務升級。
-          </p>
-        </div>
       </div>
     </Box>
   )

@@ -1,8 +1,11 @@
 import React from "react"
-import { Box } from "@mui/material"
+import { Box, useTheme } from "@mui/material"
 import { CommonSection } from "@/components/common/CommonSection"
+import { motion } from "framer-motion"
 
 export const Partners: React.FC = () => {
+  const { breakpoints } = useTheme()
+
   return (
     <CommonSection className="border-b-[24px] border-primary bg-white">
       <Box
@@ -15,13 +18,20 @@ export const Partners: React.FC = () => {
           backgroundColor: "#002659",
           clipPath: "polygon(80% 0%, 100% 0%, 100% 100%, 0% 100%)",
           zIndex: -1,
+          [breakpoints.down("sm")]: {
+            display: "none",
+          },
         }}
       />
-      <div className="mx-auto w-11/12 justify-center text-center lg:w-4/5 xl:w-[1096px]">
+      <div className="mx-auto w-5/6 justify-center text-center lg:w-4/5 xl:w-[1096px]">
         <div className="title" data-title="合作夥伴">
           Partners
         </div>
-        <div className="mt-20 grid gap-10 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4">
+        <motion.div
+          className="mt-12 grid grid-cols-2 gap-5 sm:gap-10 md:mt-20 xl:grid-cols-4"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+        >
           <img
             src="/images/partner-01.png"
             alt="partner"
@@ -82,7 +92,7 @@ export const Partners: React.FC = () => {
             alt="partner"
             className="object-cover"
           />
-        </div>
+        </motion.div>
       </div>
       <p className="section-title right-8 text-end">Partners</p>
     </CommonSection>

@@ -1,11 +1,14 @@
 import React from "react"
 import { Box, useTheme } from "@mui/material"
+import { useNavigate } from "react-router-dom"
 
-export const ProductSoftware: React.FC = () => {
-  const { palette } = useTheme()
+export const ServiceSoftware: React.FC = () => {
+  const { palette, breakpoints } = useTheme()
+  const navigate = useNavigate()
 
   return (
     <Box
+      id="software"
       sx={{
         position: "relative",
         bgcolor: palette.secondary.main,
@@ -13,31 +16,34 @@ export const ProductSoftware: React.FC = () => {
         width: "100%",
         height: "100%",
         paddingY: 20,
+        [breakpoints.down("sm")]: {
+          paddingY: 8,
+        },
       }}
     >
-      <div className="mx-auto w-11/12 justify-center lg:w-4/5 xl:w-[1096px]">
-        <div className="shadow-section rounded-xl bg-gradient-to-r from-secondary to-[#00F0FF] p-px">
-          <div className="h-full w-full rounded-[calc(0.75rem-1px)] bg-[#ffffffe6] px-24 py-8">
-            <div className="flex items-center p-5">
+      <div className="mx-auto w-5/6 justify-center lg:w-4/5 xl:w-[1096px]">
+        <div className="shadow-section rounded-xl bg-gradient-to-r from-secondary to-primary-light p-px">
+          <div className="h-full w-full rounded-[calc(0.75rem-1px)] bg-[#ffffffe6] p-5 sm:px-24 sm:py-8">
+            <div className="flex flex-col items-center px-5 py-4 sm:flex-row sm:p-5">
               <img
                 src="/images/service-01.png"
                 alt="service"
-                className="service-icon px-3"
+                className="service-icon px-3 py-10 sm:py-0"
               />
-              <div className="title-border-left ml-11 font-roboto">
+              <div className="title-border-left font-roboto sm:ml-11">
                 <p className="text-gradient inline-block font-black italic">
                   Software System Development and Integration
                 </p>
                 <p className="text-stroke-info my-3 text-4xl font-black text-primary">
                   軟體系統開發與整合
                 </p>
-                <p className="text-lg leading-9 tracking-wide text-[#262626]">
+                <p className="text-lg leading-9 tracking-wide text-dark">
                   軟體系統開發與整合是我們的核心服務之一，我們為客戶提供完整的軟體開發生命周期解決方案。我們的服務涵蓋了以下方面：
                 </p>
               </div>
             </div>
             <div className="leading-9 tracking-wide text-[#5A5A5A]">
-              <ul className="mb-16">
+              <ul className="mb-8 px-5 sm:mb-16 sm:px-0">
                 <li>
                   <span className="font-bold text-primary">•需求分析：</span>
                   與客戶密切合作，深入瞭解其業務需求和目標，確定最佳解決方案。
@@ -68,7 +74,12 @@ export const ProductSoftware: React.FC = () => {
               </div>
             </div>
             <div className="mt-5 text-center">
-              <button className="btn-gradient text-center">產品介紹</button>
+              <button
+                className="btn-gradient text-center"
+                onClick={() => navigate("/products")}
+              >
+                產品介紹
+              </button>
             </div>
           </div>
         </div>

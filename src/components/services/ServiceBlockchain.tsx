@@ -1,11 +1,14 @@
 import React from "react"
 import { Box, useTheme } from "@mui/material"
+import { useNavigate } from "react-router-dom"
 
-export const ProductBlockchain: React.FC = () => {
-  const { palette } = useTheme()
+export const ServiceBlockchain: React.FC = () => {
+  const { palette, breakpoints } = useTheme()
+  const navigate = useNavigate()
 
   return (
     <Box
+      id="blockchain"
       sx={{
         position: "relative",
         bgcolor: palette.primary.main,
@@ -13,30 +16,33 @@ export const ProductBlockchain: React.FC = () => {
         width: "100%",
         height: "100%",
         paddingY: 20,
+        [breakpoints.down("sm")]: {
+          paddingY: 8,
+        },
       }}
     >
-      <div className="mx-auto w-11/12 justify-center lg:w-4/5 xl:w-[1096px]">
-        <div className="shadow-section rounded-xl bg-info bg-gradient-to-r from-secondary to-[#00F0FF] p-px">
-          <div className="h-full w-full rounded-[calc(0.75rem-1px)] bg-info px-24 py-8">
-            <div className="flex flex-row-reverse items-center p-5">
+      <div className="mx-auto w-5/6 justify-center lg:w-4/5 xl:w-[1096px]">
+        <div className="shadow-section rounded-xl bg-info bg-gradient-to-r from-secondary to-primary-light p-px">
+          <div className="h-full w-full rounded-[calc(0.75rem-1px)] bg-info p-5 sm:px-24 sm:py-8">
+            <div className="flex flex-col items-center px-5 py-4 sm:flex-row-reverse sm:p-5">
               <img
                 src="/images/service-02.png"
                 alt="service"
-                className="service-icon px-3"
+                className="service-icon px-3 py-10 sm:py-0"
               />
-              <div className="title-border-right mr-11 font-roboto">
+              <div className="title-border-right font-roboto sm:mr-11">
                 <p className="text-gradient inline-block font-black italic">
                   Blockchain Application Development
                 </p>
                 <p className="text-stroke-info my-3 text-4xl font-black text-primary">
                   區塊鏈應用開發
                 </p>
-                <p className="text-lg leading-9 tracking-wide text-[#262626]">
+                <p className="text-lg leading-9 tracking-wide text-dark">
                   基於區塊鏈技術開發應用程式或解決方案，改善現有業務流程、增加安全性和透明度，以下是區塊鏈應用開發的一些營業項目：
                 </p>
               </div>
             </div>
-            <ul className="leading-9 tracking-wide text-[#5A5A5A]">
+            <ul className="px-5 leading-9 tracking-wide text-[#5A5A5A] sm:px-0">
               <li>
                 <span className="font-bold text-primary">
                   •供應鏈追溯系統：
@@ -69,7 +75,12 @@ export const ProductBlockchain: React.FC = () => {
               </li>
             </ul>
             <div className="mt-5 text-center">
-              <button className="btn-gradient text-center">產品介紹</button>
+              <button
+                className="btn-gradient text-center"
+                onClick={() => navigate("/products")}
+              >
+                產品介紹
+              </button>
             </div>
           </div>
         </div>

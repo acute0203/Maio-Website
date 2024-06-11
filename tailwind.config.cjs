@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         primary: {
+          light: "#00F0FF",
           DEFAULT: "#002659",
         },
         secondary: {
@@ -12,6 +13,9 @@ module.exports = {
         },
         info: {
           DEFAULT: "#E4E4E4",
+        },
+        dark: {
+          DEFAULT: "#262626",
         },
       },
       flex: {

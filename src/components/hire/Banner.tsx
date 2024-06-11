@@ -96,7 +96,7 @@ export const Banner: React.FC = () => {
     >
       {init && <Particles id="tsparticles-banner" options={options} />}
       <div className="relative bg-primary py-40">
-        <p className="absolute -top-16 right-16 text-end font-roboto text-7xl font-black italic text-secondary">
+        <p className="absolute -top-11 right-8 text-end font-roboto text-5xl font-black italic text-secondary sm:-top-16 sm:right-16 sm:text-7xl">
           JOIN MAIO
         </p>
         <div className="mx-auto w-5/6 justify-center lg:w-4/5 xl:w-[806px]">

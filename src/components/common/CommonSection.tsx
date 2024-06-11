@@ -1,5 +1,5 @@
 import React from "react"
-import { Box } from "@mui/material"
+import { Box, useTheme } from "@mui/material"
 
 export type CommonSectionProps = {
   children: React.ReactNode
@@ -9,18 +9,26 @@ export type CommonSectionProps = {
 export const CommonSection: React.FC<CommonSectionProps> = ({
   children,
   className,
-}) => (
-  <Box
-    className={className}
-    sx={{
-      position: "relative",
-      zIndex: 10,
-      width: "100%",
-      height: "100%",
-      paddingTop: 20,
-      paddingBottom: 40,
-    }}
-  >
-    {children}
-  </Box>
-)
+}) => {
+  const { breakpoints } = useTheme()
+
+  return (
+    <Box
+      className={className}
+      sx={{
+        position: "relative",
+        zIndex: 10,
+        width: "100%",
+        height: "100%",
+        paddingTop: 20,
+        paddingBottom: 40,
+        [breakpoints.down("sm")]: {
+          paddingTop: 12,
+          paddingBottom: 20,
+        },
+      }}
+    >
+      {children}
+    </Box>
+  )
+}

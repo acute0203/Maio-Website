@@ -1,4 +1,5 @@
 import { AboutEnum } from "@/core/enum/AboutEnum"
+import { ProductsItemProps } from "@/components/products/ProductsItem"
 
 export type CardData = {
   title: string
@@ -14,6 +15,33 @@ export const langMenus = [
   {
     name: "en",
     translation: "en",
+  },
+]
+
+export const productsMenus = [
+  {
+    label: "軟體系統開發與整合",
+    path: "software",
+  },
+  {
+    label: "區塊鏈應用開發",
+    path: "blockchain",
+  },
+  {
+    label: "雲端服務管理",
+    path: "cloud",
+  },
+  {
+    label: "人工智慧與大數據",
+    path: "AI",
+  },
+  {
+    label: "數位轉型與創新",
+    path: "digital",
+  },
+  {
+    label: "Fintech金融科技",
+    path: "fintech",
   },
 ]
 
@@ -98,5 +126,40 @@ export const aboutMenus = [
     key: AboutEnum.VALUE,
     label: "核心價值",
     className: "-translate-x-[84px]",
+  },
+]
+
+export const productsItemsMenus: ProductsItemProps[] = [
+  {
+    image: "/images/products-01.png",
+    title: "ＯＯＸＸ CRM系統開發",
+    description:
+      "ＯＯＸＸ說明。CRM系統開發是指為企業開發客戶關係管理（CRM）系統的過程，旨在管理和分析客戶相關信息，包括聯繫資料、購買歷史和服務記錄，以提高客戶滿意度和市場競爭力。",
+    flexDirection: "flex-col md:flex-row",
+    borderDirection: "title-border-left",
+  },
+  {
+    image: "/images/products-02.png",
+    title: "ＯＸ CRM系統開發",
+    description:
+      "ＯＸ說明。CRM系統開發是指為企業開發客戶關係管理（CRM）系統的過程，旨在管理和分析客戶相關信息，包括聯繫資料、購買歷史和服務記錄，以提高客戶滿意度和市場競爭力。",
+    flexDirection: "flex-col md:flex-row-reverse",
+    borderDirection: "title-border-right",
+  },
+  {
+    image: "/images/products-03.png",
+    title: "ＸＸＯＯ CRM系統開發",
+    description:
+      "ＸＸＯＯ 說明。CRM系統開發是指為企業開發客戶關係管理（CRM）系統的過程，旨在管理和分析客戶相關信息，包括聯繫資料、購買歷史和服務記錄，以提高客戶滿意度和市場競爭力。",
+    flexDirection: "flex-col md:flex-row",
+    borderDirection: "title-border-left",
+  },
+  {
+    image: "/images/products-04.png",
+    title: "ＸＯ CRM系統開發",
+    description:
+      "ＸＯ說明。CRM系統開發是指為企業開發客戶關係管理（CRM）系統的過程，旨在管理和分析客戶相關信息，包括聯繫資料、購買歷史和服務記錄，以提高客戶滿意度和市場競爭力。",
+    flexDirection: "flex-col md:flex-row-reverse",
+    borderDirection: "title-border-right",
   },
 ]
